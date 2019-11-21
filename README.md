@@ -44,4 +44,14 @@ expo init
 This will prompt you with several options. For a simplicity we'll be using managed workflow ([more info about workflows](https://docs.expo.io/versions/latest/introduction/managed-vs-bare/) and TypeScript to get an advantage of strong typing. So select:
 > \> `blank (TypeScript)`
 
-Specify the name and the `slug` of your mobile app. The app should be avalable in the `./slug` subdirectory
+Specify the name and the slug (e.g. `petclinic`) of your mobile app. The app should be available in the `./slug` subdirectory
+```
+cd petclinic
+```
+
+The next step is crucial to make CUBA's cli work: [specify](package.json#2) `name` in `package.json` of newly created application.
+
+Now you will be able to launch your newly-created app in web:
+```
+yarn web
+```
