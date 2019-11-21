@@ -49,9 +49,22 @@ Specify the name and the slug (e.g. `petclinic`) of your mobile app. The app sho
 cd petclinic
 ```
 
-The next step is crucial to make CUBA's cli work: [specify](package.json#2) `name` in `package.json` of newly created application.
+The next step is crucial to make CUBA's cli work: [specify](package.json#L2) `name` in `package.json` of newly created application.
 
 Now you will be able to launch your newly-created app in web:
 ```
 yarn web
 ```
+
+In order to launch your app in Android/iOS simulators you will need to set up corresponding SDKs on your machine. 
+Then it will be possible to launch the app as simple as
+
+```
+yarn android
+```
+or
+```
+yarn ios
+```
+
+Read more about Expo's features and abilities in the [official documentation](https://docs.expo.io/versions/v35.0.0/get-started/create-a-new-app/) 
