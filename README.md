@@ -26,8 +26,8 @@ Once REST API addon is enabled you **must** configure [security](https://doc.cub
 #### Setup Studio
 For a convenience of using SDK generator toggle `Old Studio integration enabled` in CUBA plugin settings in IntelliJ.
 
-
 ### Creating React Native Application
+
 #### Setup the Environment
 You should have [Node.js](https://nodejs.org/en/download/) 12+ installed on your system. Optionally you may also install [Yarn](https://yarnpkg.com/). This particular sample project uses Yarn instead of npm. 
 
@@ -67,4 +67,29 @@ or
 yarn ios
 ```
 
-Read more about Expo's features and abilities in the [official documentation](https://docs.expo.io/versions/v35.0.0/get-started/create-a-new-app/) 
+Read more about Expo's features and abilities in the [official documentation](https://docs.expo.io/versions/v35.0.0/get-started/create-a-new-app/)
+
+### Generating CUBA TypeScript SDK
+
+#### Install gen-cuba-front Tool
+
+```
+npm install @cuba-platform/front-generator
+``` 
+
+#### Generate TypeScript SDK
+
+In your React Native app create `cuba` directory:
+
+```
+mkdir cuba
+cd cuba
+``` 
+
+Open your backend (CUBA) app in Studio/IntelliJ IDEA and run SDK generator:
+
+```
+gen-cuba-front sdk:all
+```
+
+It should 
