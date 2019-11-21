@@ -115,4 +115,4 @@ Install `mobx` and `@cuba-platform/react-core`:
 yarn add mobx@4 mobx-react@5 @cuba-platform/react-core
 ```
 
-See [usage example](components/Pets.tsx#L11)
+See [usage example](components/PetBrowse.tsx#L11)
