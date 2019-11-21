@@ -21,7 +21,7 @@ export class PetBrowse extends Component {
     return (
       <ScrollView>
         {items.map(pet =>
-          <Text>{pet._instanceName}</Text>
+          <Text key={pet.id}>{pet._instanceName}</Text>
         )}
       </ScrollView>
     );
