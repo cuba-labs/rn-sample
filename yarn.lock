@@ -850,6 +850,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@cuba-platform/rest@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@cuba-platform/rest/-/rest-0.6.0.tgz#63faca9ffb6447839ecc6eeff7e5a730c5f09c94"
+  integrity sha512-vS2BHD0Fjt8/tX7+lzK7S6nOyzjJXUD4AlVZEaKBEM+FvME9pAR/0SWuu+p3HMX/xj+tAzNAb/+n6lU4lbQFXg==
+
 "@expo/vector-icons@^10.0.2":
   version "10.0.6"
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-10.0.6.tgz#5718953ff0b97827d11dae5787976fa8ce5caaed"

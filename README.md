@@ -92,4 +92,16 @@ Open your backend (CUBA) app in Studio/IntelliJ IDEA and run SDK generator:
 gen-cuba-front sdk:all
 ```
 
-It should 
+It should prompt you with CUBA projects currently opened in Studio. Select the desired project. The SDK should be generated in the current directory (cuba).
+
+The SDK contains types of Entities, Enums, Views and exposed via REST middleware services.
+
+#### Add CUBA REST JS Library
+In order to communicate with REST API add `@cuba-platform/rest` library:
+
+```
+yarn add @cuba-platform/rest
+```
+
+The library uses base64 conversion which is absent on mobile devices RN runtime. 
+For this demo project to provide it for mobile devices we register globally our own implementation, see `util/base64.ts`.  
