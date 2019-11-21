@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {injectMainStore, MainStoreInjected} from "@cuba-platform/react-core";
 import {observer} from "mobx-react";
 import {Login} from "./Login";
-import {Button, View} from "react-native";
+import {View} from "react-native";
 import {PetBrowse} from "./PetBrowse";
+import {Button} from "react-native-ui-kitten";
 
 @injectMainStore
 @observer
@@ -20,7 +21,7 @@ export class Root extends Component<MainStoreInjected> {
     return (
       <View>
         <PetBrowse/>
-        <Button title={'Log out'} onPress={this.logout}/>
+        <Button onPress={this.logout}>Logout</Button>
       </View>
     );
   }

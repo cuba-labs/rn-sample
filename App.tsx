@@ -4,6 +4,8 @@ import {initializeApp} from "@cuba-platform/rest";
 import {registerBase64} from "./util/base64";
 import {CubaAppProvider} from "@cuba-platform/react-core";
 import {Root} from "./components/Root";
+import {mapping, light as lightTheme} from '@eva-design/eva';
+import {ApplicationProvider} from "react-native-ui-kitten";
 
 registerBase64();
 
@@ -16,7 +18,9 @@ export const cubaREST = initializeApp({
 export default function App() {
   return (
     <CubaAppProvider cubaREST={cubaREST}>
-      <Root/>
+      <ApplicationProvider mapping={mapping} theme={lightTheme}>
+        <Root/>
+      </ApplicationProvider>
     </CubaAppProvider>
   );
 }
