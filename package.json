@@ -9,8 +9,11 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@cuba-platform/react-core": "^0.1.0-alpha.1",
     "@cuba-platform/rest": "^0.6.0",
     "expo": "^35.0.0",
+    "mobx": "4",
+    "mobx-react": "5",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",

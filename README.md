@@ -104,4 +104,13 @@ yarn add @cuba-platform/rest
 ```
 
 The library uses base64 conversion which is absent on mobile devices RN runtime. 
-For this demo project to provide it for mobile devices we register globally our own implementation, see `util/base64.ts`.  
+For this demo project to provide it for mobile devices we register globally our own implementation, see `util/base64.ts`.
+
+#### State Management
+
+CUBA provides experimental MobX based primitives for working with data.
+Install `mobx` and `@cuba-platform/react-core`:
+
+```
+yarn add mobx@4 mobx-react@5 @cuba-platform/react-core
+```
