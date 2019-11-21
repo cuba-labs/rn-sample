@@ -2,6 +2,8 @@ import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {initializeApp} from "@cuba-platform/rest";
 import {registerBase64} from "./util/base64";
+import {CubaAppProvider} from "@cuba-platform/react-core";
+import {Root} from "./components/Root";
 
 registerBase64();
 
@@ -13,10 +15,9 @@ export const cubaREST = initializeApp({
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <Button title={'Login'} onPress={() => {cubaREST.login('admin', 'admin')}}/>
-    </View>
+    <CubaAppProvider cubaREST={cubaREST}>
+      <Root/>
+    </CubaAppProvider>
   );
 }
 
