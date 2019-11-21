@@ -10,7 +10,7 @@ registerBase64();
 export const cubaREST = initializeApp({
   name: 'petclinic',
   apiUrl: 'http://192.168.16.120:8080/petclinic/rest/', // TODO you will need to provide your machine's IP to make it work in simulator
-  // storage: window.localStorage // TODO you will need to provide persistent storage implementation for REST token
+  storage: window.localStorage // TODO you will need to provide persistent storage for mobile device runtime
 });
 
 export default function App() {

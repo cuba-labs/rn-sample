@@ -8,7 +8,7 @@ type Props = {
 }
 
 @observer
-class Login extends Component<Props> {
+export class Login extends Component<Props> {
 
   @observable login = '';
   @observable password = '';
@@ -35,5 +35,3 @@ class Login extends Component<Props> {
     this.props.onLoginSubmit(this.login, this.password);
   };
 }
-
-export default Login;
