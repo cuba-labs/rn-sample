@@ -1,17 +1,17 @@
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {initializeApp} from "@cuba-platform/rest";
 import {registerBase64} from "./util/base64";
 import {CubaAppProvider} from "@cuba-platform/react-core";
 import {Root} from "./components/Root";
-import {mapping, light as lightTheme} from '@eva-design/eva';
+import {light as lightTheme, mapping} from '@eva-design/eva';
 import {ApplicationProvider} from "react-native-ui-kitten";
 
 registerBase64();
 
 export const cubaREST = initializeApp({
   name: 'petclinic',
-  apiUrl: 'http://192.168.16.120:8080/petclinic/rest/', // TODO you will need to provide your machine's IP to make it work in simulator
+  apiUrl: 'https://petcl.demo.haulmont.com/petclinic/rest/', // TODO you will need to provide your machine's IP to make it work in simulator
   storage: window.localStorage // TODO you will need to provide persistent storage for mobile device runtime
 });
 

@@ -17,7 +17,7 @@ class LoginComponent extends Component<Props> {
 
   render() {
 
-    const {style, themedStyle, ...restProps} = this.props;
+    const {style, themedStyle} = this.props;
 
     return (
       <ScrollableAvoidKeyboard style={themedStyle.container}>
@@ -25,7 +25,7 @@ class LoginComponent extends Component<Props> {
           <Text
             style={themedStyle.helloLabel}
             category='h1'>
-            Hello
+            Pet Clinic
           </Text>
           <Text
             style={themedStyle.signInLabel}
@@ -34,8 +34,7 @@ class LoginComponent extends Component<Props> {
           </Text>
         </View>
         <View
-          style={[{}, style]}
-          {...restProps}>
+          style={[{}, style]}>
           <View style={themedStyle.formContainer}>
             <Input
               autoCapitalize='none'
