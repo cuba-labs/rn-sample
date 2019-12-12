@@ -1,7 +1,59 @@
 import React, {Component} from 'react';
-import {Button, TextInput, View} from "react-native";
+import {TextInput, Text, View, StyleSheet, TouchableOpacity} from "react-native";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
+import {colors} from '../styles/palette';
+import {control} from '../styles/mixins';
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: colors.primary,
+    minHeight: 220,
+    flex: 1,
+    justifyContent: 'center',
+  },
+  form: {
+    marginTop: 32,
+  },
+  title: {
+    color: colors.textInverted,
+    textAlign: 'center',
+    fontSize: 28,
+    fontWeight: 'bold',
+  },
+  subTitle: {
+    color: colors.textInverted,
+    textAlign: 'center',
+    fontSize: 18,
+    marginTop: 16,
+  },
+  input: {
+    ...control,
+    borderColor: colors.borders,
+    borderWidth: 1,
+    paddingHorizontal: 8,
+    fontSize: 18,
+  },
+  forgotPassword: {
+    ...control,
+    alignItems: 'flex-end',
+  },
+  forgotPasswordText: {
+    color: colors.primary,
+  },
+  loginBtn: {
+    ...control,
+    backgroundColor: colors.primary,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 32,
+  },
+  loginBtnText: {
+    color: colors.textInverted,
+    fontSize: 18,
+  }
+});
 
 type Props = {
   onLoginSubmit: (login: string, password: string) => any
@@ -16,9 +68,30 @@ export class Login extends Component<Props> {
   render() {
     return (
       <View>
-        <TextInput value={this.login} onChangeText={this.onLoginChange}/>
-        <TextInput value={this.password} onChangeText={this.onPasswordChange}/>
-        <Button title={'Log In'} onPress={this.onLoginSubmit}/>
+        <View style={styles.header}>
+          <Text style={styles.title}>Pet Clinic</Text>
+          <Text style={styles.subTitle}>Sign in to your account</Text>
+        </View>
+        <View style={styles.form}>
+          <TextInput style={styles.input}
+                     value={this.login}
+                     placeholder='Login'
+                     placeholderTextColor={colors.placeholders}
+                     onChangeText={this.onLoginChange}
+                     onSubmitEditing={this.onLoginSubmit}
+          />
+          <TextInput style={styles.input}
+                     value={this.password}
+                     placeholder='Password'
+                     placeholderTextColor={colors.placeholders}
+                     secureTextEntry={true}
+                     onChangeText={this.onPasswordChange}
+                     onSubmitEditing={this.onLoginSubmit}
+          />
+          <TouchableOpacity style={styles.loginBtn} onPress={this.onLoginSubmit}>
+            <Text style={styles.loginBtnText}>SIGN IN</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
