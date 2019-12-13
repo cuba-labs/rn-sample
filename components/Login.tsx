@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
-import {TextInput, Text, View, StyleSheet, TouchableOpacity} from "react-native";
+import {TextInput, Text, View, StyleSheet} from "react-native";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
 import {colors} from '../styles/palette';
 import {control} from '../styles/mixins';
+import { PrimaryButton } from './PrimaryButton';
+
+const horizontalMarginsMixin = {
+  marginLeft: 16,
+  marginRight: 16,
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -29,6 +35,7 @@ const styles = StyleSheet.create({
   },
   input: {
     ...control,
+    ...horizontalMarginsMixin,
     borderColor: colors.borders,
     borderWidth: 1,
     paddingHorizontal: 8,
@@ -36,22 +43,15 @@ const styles = StyleSheet.create({
   },
   forgotPassword: {
     ...control,
+    ...horizontalMarginsMixin,
     alignItems: 'flex-end',
   },
   forgotPasswordText: {
+    ...horizontalMarginsMixin,
     color: colors.primary,
   },
-  loginBtn: {
-    ...control,
-    backgroundColor: colors.primary,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 32,
-  },
-  loginBtnText: {
-    color: colors.textInverted,
-    fontSize: 18,
+  submitButton: {
+    ...horizontalMarginsMixin,
   }
 });
 
@@ -88,9 +88,9 @@ export class Login extends Component<Props> {
                      onChangeText={this.onPasswordChange}
                      onSubmitEditing={this.onLoginSubmit}
           />
-          <TouchableOpacity style={styles.loginBtn} onPress={this.onLoginSubmit}>
-            <Text style={styles.loginBtnText}>SIGN IN</Text>
-          </TouchableOpacity>
+          <View style={styles.submitButton}>
+            <PrimaryButton onPress={this.onLoginSubmit}>Log in</PrimaryButton>
+          </View>
         </View>
       </View>
     );

@@ -1,29 +1,50 @@
 import React, {Component} from 'react';
 import {collection} from "@cuba-platform/react-core";
-import {Pet, PetView} from "../cuba/entities/petclinic_Pet";
-import {ScrollView, Text, View} from "react-native";
+import {ScrollView, StyleSheet, Text} from "react-native";
 import {PredefinedView} from "@cuba-platform/rest";
 import {observer} from "mobx-react";
+import {colors} from '../styles/palette';
+import {User, UserView} from '../cuba/entities/base/sec$User';
+
+const styles = StyleSheet.create({
+  list: {
+    marginTop: 16,
+  },
+  item: {
+    fontSize: 16,
+    fontColor: colors.textPrimary,
+    marginTop: 4,
+    marginBottom: 4,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  }
+});
 
 @observer
 export class PetBrowse extends Component {
 
-  petsData = collection<PetView<'_base'>>(Pet.NAME, {view: PredefinedView.BASE});
+  petsData = collection<UserView<'_base'>>(User.NAME, {view: PredefinedView.BASE});
 
   render() {
 
     const {status, items} = this.petsData;
+
 
     if (status !== "DONE") {
       return <Text>'Loading...'</Text>;
     }
 
     return (
-      <ScrollView>
-        {items.map(pet =>
-          <Text key={pet.id}>{pet._instanceName}</Text>
-        )}
-      </ScrollView>
+      <>
+        <Text style={styles.title}>List of users:</Text>
+        <ScrollView style={styles.list}>
+          {items.map(pet =>
+            <Text style={styles.item} key={pet.id}>{pet._instanceName}</Text>
+          )}
+        </ScrollView>
+      </>
     );
   }
 }

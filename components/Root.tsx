@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import {injectMainStore, MainStoreInjected} from "@cuba-platform/react-core";
 import {observer} from "mobx-react";
 import {Login} from "./Login";
-import {Button, View} from "react-native";
+import {StyleSheet, View} from "react-native";
 import {PetBrowse} from "./PetBrowse";
+import {PrimaryButton} from './PrimaryButton';
 
 @injectMainStore
 @observer
@@ -18,9 +19,9 @@ export class Root extends Component<MainStoreInjected> {
     }
 
     return (
-      <View>
+      <View style={styles.container}>
         <PetBrowse/>
-        <Button title={'Log out'} onPress={this.logout}/>
+        <PrimaryButton onPress={this.logout}>Log out</PrimaryButton>
       </View>
     );
   }
@@ -29,3 +30,9 @@ export class Root extends Component<MainStoreInjected> {
     this.props.mainStore.logout();
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 16,
+  }
+});
